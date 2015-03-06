@@ -1,0 +1,25 @@
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	float a,b,c,p,area,raiz;
+
+	cout << "Ingrese lado a: " << endl;
+	cin >> a;
+
+	cout << "Ingrese lado b: " << endl;
+	cin >> b;
+
+	cout << "Ingrese lado c: " << endl;
+	cin >> c;
+
+	p = (a+b+c)/2;
+	area = sqrtf(p*(p-a)*(p-b)*(p-c));
+
+	cout << "El area del triangulo es: " << area << endl;
+	getch()
+	return 0;
+}
+
