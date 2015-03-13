@@ -1,0 +1,18 @@
+
+#include<iostream>
+#include"stdafx.h"
+#include"conio.h"
+using namespace std;
+
+int main() {
+	int a;
+	cout << "Introduce el numero: " << endl;
+	cin >> a;
+	if (a==0) {
+		cout << "El numero es cero" << endl;
+	} else {
+		cout << "El numero no es cero" << endl;
+	}
+	return 0;
+}
+
