@@ -1,0 +1,17 @@
+
+#include<iostream>
+#include"stdafx.h"
+#include"conio.h"
+using namespace std;
+int main() {
+	int a;
+	cout << "Introduce el numero: " << endl;
+	cin >> a;
+	if (a>0) {
+		cout << "El numero es postivo" << endl;
+	} else {
+		cout << "El numero es negativo" << endl;
+	}
+	return 0;
+}
+
