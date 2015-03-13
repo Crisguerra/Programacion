@@ -1,0 +1,16 @@
+#include<iostream>
+#include"stdafx.h"
+#include "conio.h"
+using namespace std;
+
+int main() {
+	int a;
+	cout << "Introducir el numero: " << endl;
+	cin >> a;
+	if (a<0) {
+		a = -a;
+	}
+	cout << "El valor absoluto es: " << a << endl;
+	return 0;
+	getch ();
+}
