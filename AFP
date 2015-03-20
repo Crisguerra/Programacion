@@ -1,0 +1,21 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h" 
+using namespace std;
+int main() {
+	float s;
+	float salario;
+	float st;
+	cout << "Introduzca el salario minimo: " << endl;
+	cin >> s;
+	cout << "Introduzca su salario: " << endl;
+	cin >> salario;
+	if (salario>2*s) {
+		st = salario*15/100;
+		cout << "El impuesto a pagar es : " << st << endl;
+	} else {
+		cout << "No hay impuesto de AFP" << endl;
+	}
+	getch ();
+	return 0;
+}
