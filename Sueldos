@@ -1,0 +1,24 @@
+#include"stdafx.h"
+#include<iostream>
+#include"conio.h"
+using namespace std;
+void main() {
+	float a;
+	float b;
+	float c;
+	float i;
+	float p;
+	float s;
+	cout << "Ingrese el número de empleados: " << endl;
+	cin >> a;
+	i = 0.13;
+	for (p=1;p<=a;p++) {
+		cout << "Ingrese las horas trabajadas: " << endl;
+		cin >> b;
+		cout << "Ingrese el pago por hora: " << endl;
+		cin >> c;
+		s = (c*b)-((c*b)*i);
+		cout << "El Sueldo es: " << s << endl;
+	}
+	getch();
+}
