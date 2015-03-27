@@ -3,12 +3,9 @@
 #include"conio.h"
 using namespace std;
 void main() {
-	float a;
-	float b;
-	float c;
-	float i;
-	float p;
+	int a, b, c, p;
 	float s;
+	float i;
 	cout << "Ingrese el numero de empleados: " << endl;
 	cin >> a;
 	i = 0.13;
