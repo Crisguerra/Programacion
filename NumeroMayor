@@ -1,0 +1,25 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void main() {
+	float i;
+	float m;
+	float n;
+	float num;
+	cout << "Introduzca la cantidad de numeros: " << endl;
+	cin >> n;
+	m = -99999999999999999;
+	for (i=1;i<=n;i++) {
+		cout << "Introduzca un numero: " << endl;
+		cin >> num;
+		if (num>m) {
+			m = num;
+		}
+	}
+	cout << "El numero mayor es: " << m << endl;
+	getch();
+	return 0;
+}
+
