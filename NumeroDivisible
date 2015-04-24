@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+
+int a, b, m, n;
+   
+	cout<< "Introduce el primer numero: "<<endl;
+	cin>> a;
+	cout<< "Introduce el segundo numero: "<<endl;
+	cin>> b;
+		if (a<b){
+			 m=b;
+			 n=a;
+		}else{
+			 n=b;
+			 m=a;
+	}
+		if ((m % n)==0)
+			cout<< "El menor ingresado es divisor del mayor";
+		else
+			cout<< " El menor no es divisor del mayor";
+
+	getch();
+}
