@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+int x, n, i, S, sig;
+	cout<< " Introduce el numero: "<<endl;
+	cin>> x;
+	cout<< " Introduce el numero de elementos: "<<endl;
+	cin>> n;
+	S=0;
+	sig=1;
+	for (i=1;i<=n;i++){
+		S=S+(sig)*x^i;
+		sig=sig*-1;
+	}
+	cout<< "El resultado es: "<<S<<endl;
+
+	getch();
+}
