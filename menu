@@ -1,0 +1,102 @@
+#include "stdafx.h"
+#include <iostream>
+#include <stdio.h>
+#include "conio.h"
+#define nomArchAmigo  "amigo.dat"
+using namespace std;
+struct regAmigo{
+	char nombre[30];
+	int edad;
+	char sexo;
+	bool Activo;
+};
+
+void crearArchAmigo(){
+	FILE*ptr;
+	ptr=fopen(nomArchAmigo,"wb");
+	fclose(ptr);
+}
+void Adicionar (){
+	FILE*ptr;
+		regAmigo reg;
+		cout<<" Nombre: ?";
+		do{
+			gets(reg.nombre);
+		}while (strlen(reg.nombre)==0);
+		cout<<"Edad : ";
+		cin>>reg.edad;
+		cout<<"Sexo?: (M/F)";
+		cin>>reg.sexo;
+		reg.Activo=true;
+		ptr=fopen(nomArchAmigo,"ab");
+		fwrite(&reg,sizeof(reg),1,ptr);
+		fclose(ptr);
+		cout<<"\n\t Registro creado exitosamente ....!\n";
+}
+void Listado(){
+	FILE*ptr;
+	regAmigo reg;
+	int cont=0;
+	ptr=fopen(nomArchAmigo,"rb");
+	if(ptr== NULL){
+		cout<<"El archivo no existe !";
+	}else{
+		fread(&reg,sizeof(reg),1,ptr);
+		while(feof(ptr)==false){
+			if(reg.Activo= true){
+			cont++;
+			cout<<"\n\t"<<cont <<"  "<<reg.nombre<<"   "<<reg.edad<<"    "<<reg.sexo;
+		}
+		fread(&reg,sizeof(reg),1,ptr);
+		}
+	}
+	fclose(ptr);
+
+}
+void edadmayor(){
+	FILE*ptr;
+	int may=0;
+	regAmigo reg;
+	ptr=fopen(nomArchAmigo,"rb");
+	if(ptr==NULL){
+		cout<<"El Archivo no existe!!";
+	}else{
+		fread(&reg,sizeof(reg),1,ptr);
+		while(feof(ptr)==false){
+			if(reg.Activo=true){
+				if(reg.edad>may){
+					may=reg.edad;
+
+ 				}
+			}
+			fread(&reg,sizeof(ptr),1,ptr);
+		}
+	}
+		cout<<"La edad mayor es : "<<may;
+	fclose(ptr);
+
+}
+void main (){
+int opcion;
+	do{
+		cout<<endl<<endl<<"\t\t Menu ";
+		cout<<endl<<"\t1.-Crear un Archivo";
+		cout<<endl<<"\t2.-Adicionar un registro al Archivo";
+		cout<<endl<<"\t3.-Listado de todos los amigos";
+		cout<<endl<<"\t4.-La edad mayor";
+		cout<<endl<<"\t 0.-Salir";
+		cout<<endl<<"\t Seleccionar opcion: ";
+		cin>>opcion;
+		switch(opcion){
+			case 1: crearArchAmigo();
+				break;
+			case 2: Adicionar();
+				break;
+			case 3:Listado();
+				break;
+			case 4:edadmayor();
+				break;
+		}
+		}while(opcion!=0);
+
+}
