@@ -1,0 +1,83 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void mostrarhorariosdisponibles(int vec[]){
+if (vec[1]==0)
+	cout<<"7:00-8:00"<<endl;
+if(vec[2]==0)
+	cout<<"9:00-10:00"<<endl;
+
+}
+void HorarioJorge(int vec[]){
+int opcion=0,i;
+cout<<"\t MENU HORARIOS"<<endl;
+cout<<"1.-7:00-8:00"<<endl;
+cout<<"2.-9:00-10:00"<<endl;
+cout<<"3.-10:00-11:00"<<endl;
+do{
+cin>>opcion;
+}while(vec[opcion]==1);
+vec[opcion]=1;
+cout<<"Ya reservo"<<endl;
+
+}
+
+void primermenu(int vec[]){
+int opcion;
+cout<<"MENU ´PELUQUERIA DESTAQUES"<<endl;
+cout<<"Elija el peluquero"<<endl;
+cout<<"1.-Jorge"<<endl;
+cout<<"2.-"<<endl;
+cin>>opcion;
+switch(opcion){
+case 1 : HorarioJorge(vec);
+	break;
+}
+}
+
+void main ()
+{
+int opcion,i;
+int vec[20];
+for(i=0;i<21;i++)
+	vec[i]=0;
+do{
+	cout<<"\t\t ****MENU****"<<endl;
+	cout<<"Elija la peluqueria que desea "<<endl;
+	cout<<"1.-Destaques"<<endl;
+	cout<<"2.-"<<endl;
+	cout<<"0.-Salir"<<endl;
+	cin>>opcion;
+	switch(opcion){
+	case 1:primermenu(vec);
+		break;
+	default:
+			cout<<"ERROR DE OPCION"<<endl;
+	}
+}while (opcion!=0);
+getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*if(vec[opcion]==0){
+	vec[opcion]=1;
+	cout<<"Ya reservastes"<<endl;
+}else{
+cout<<"El Horario no esta disponible"<<endl;
+mostrarhorariosdisponibles(vec);
+*/
